@@ -74,7 +74,7 @@ spring:
         cache: false
 
 server:
-    port: 8080
+    port: 8085
 
 # ===================================================================
 # JHipster specific properties
@@ -103,7 +103,7 @@ jhipster:
             key: 52520ce6ba80ef49e573f80d16071ba51dc702451815744fa493ed4778e08f8b7047d5cca7b80d97fb3fd749772d199bd006
     mail: # specific JHipster mail property, for standard properties see MailProperties
         from: petclinic@localhost
-        base-url: http://127.0.0.1:8080
+        base-url: http://127.0.0.1:8085
     metrics:
         logs: # Reports metrics in the logs
             enabled: false

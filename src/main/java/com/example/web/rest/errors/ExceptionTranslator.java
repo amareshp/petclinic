@@ -63,7 +63,9 @@ public class ExceptionTranslator implements ProblemHandling {
                 .withDetail(problem.getDetail())
                 .withInstance(problem.getInstance());
             problem.getParameters().forEach(builder::with);
-            if (!problem.getParameters().containsKey(MESSAGE_KEY) && problem.getStatus() != null) {
+            if ( problem.getDetail().contains("insert") && problem.getDetail().contains("constraint") ) {
+                builder.with(MESSAGE_KEY, "error.http." + problem.getStatus().getStatusCode() + ": Unable to insert. Unique constraint violated.");
+            } else if (!problem.getParameters().containsKey(MESSAGE_KEY) && problem.getStatus() != null) {
                 builder.with(MESSAGE_KEY, "error.http." + problem.getStatus().getStatusCode());
             }
         }

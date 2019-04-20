@@ -12,6 +12,26 @@ import password, { PasswordState } from 'app/modules/account/password/password.r
 import settings, { SettingsState } from 'app/modules/account/settings/settings.reducer';
 import passwordReset, { PasswordResetState } from 'app/modules/account/password-reset/password-reset.reducer';
 import sessions, { SessionsState } from 'app/modules/account/sessions/sessions.reducer';
+// prettier-ignore
+import owner, {
+  OwnerState
+} from 'app/entities/owner/owner.reducer';
+// prettier-ignore
+import pet, {
+  PetState
+} from 'app/entities/pet/pet.reducer';
+// prettier-ignore
+import vet, {
+  VetState
+} from 'app/entities/vet/vet.reducer';
+// prettier-ignore
+import slot, {
+  SlotState
+} from 'app/entities/slot/slot.reducer';
+// prettier-ignore
+import appointment, {
+  AppointmentState
+} from 'app/entities/appointment/appointment.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -25,6 +45,11 @@ export interface IRootState {
   readonly password: PasswordState;
   readonly settings: SettingsState;
   readonly sessions: SessionsState;
+  readonly owner: OwnerState;
+  readonly pet: PetState;
+  readonly vet: VetState;
+  readonly slot: SlotState;
+  readonly appointment: AppointmentState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -40,6 +65,11 @@ const rootReducer = combineReducers<IRootState>({
   password,
   settings,
   sessions,
+  owner,
+  pet,
+  vet,
+  slot,
+  appointment,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar
 });
